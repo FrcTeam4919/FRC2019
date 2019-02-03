@@ -11,7 +11,8 @@
 // package org.usfirst.frc4919.frc2019NEW.commands;
 // import edu.wpi.first.wpilibj.command.Command;
 // import org.usfirst.frc4919.frc2019NEW.Robot;
-
+// import edu.wpi.first.wpilibj.Compressor;
+// import edu.wpi.first.wpilibj.DoubleSolenoid;
 // /**
 // *
 // */
