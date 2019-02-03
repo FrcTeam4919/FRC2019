@@ -39,6 +39,7 @@ public class BackPistonsDown extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        Robot.pneumatics.extendB();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -69,9 +70,5 @@ public class BackPistonsDown extends Command {
 
     public void retracts() {
         doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
-    }
-
-    public void stop() {
-        doubleSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 }

@@ -81,7 +81,7 @@ public class OI {
         towerPistonForwardsButton = new JoystickButton(joystick, 4);
         towerPistonForwardsButton.whileHeld(new TowerPistonForwards());
         backPistonsUpButton = new JoystickButton(joystick, 5);
-        backPistonsUpButton.whileHeld(new FrontPistonsUp());
+        backPistonsUpButton.whileHeld(new BackPistonsUp());
         backPistonsDownButton = new JoystickButton(joystick, 6);
         backPistonsDownButton.whileHeld(new BackPistonsDown());
         frontPistonsUpButton = new JoystickButton(joystick, 7);
