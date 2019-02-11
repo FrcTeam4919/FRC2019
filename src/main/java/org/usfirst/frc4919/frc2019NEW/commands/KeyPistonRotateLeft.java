@@ -71,7 +71,7 @@ public class KeyPistonRotateLeft extends Command {
         doubleSolenoid.set(DoubleSolenoid.Value.kForward);
     }
 
-    public void retracts() {
+    public void retract() {
         doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
 }
