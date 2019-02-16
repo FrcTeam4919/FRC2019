@@ -67,6 +67,7 @@ public class FrontPistonsDown extends Command {
     protected void interrupted() {
     }
 
+    
     public void extend() {
         doubleSolenoid.set(DoubleSolenoid.Value.kForward);
     }

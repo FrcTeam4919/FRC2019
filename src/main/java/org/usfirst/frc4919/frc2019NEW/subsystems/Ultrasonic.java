@@ -10,6 +10,8 @@
 
 package org.usfirst.frc4919.frc2019NEW.subsystems;
 
+import java.math.RoundingMode;
+
 import org.usfirst.frc4919.frc2019NEW.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -37,9 +39,9 @@ public class Ultrasonic extends Subsystem {
     private AnalogInput uSSensorDownward;
     public static Ultrasonic ultrasonic;
 
-    private static final double INCHES_PER_VOLT = 130.0;
-    private static final double CM_PER_VOLT = 102.396068;
-    private static final double MM_PER_VOLT = 1023.96068;
+    private static final double INCHES_PER_VOLT = 130;
+    private static final double CM_PER_VOLT = 102;
+    private static final double MM_PER_VOLT = 1023;
 
     public Ultrasonic(int channel) {
         analog = new AnalogInput(channel);
@@ -61,19 +63,19 @@ public class Ultrasonic extends Subsystem {
     }
 
     public double getDistanceIn() {
-        return analog.getVoltage() * INCHES_PER_VOLT;
+        return Math.round(analog.getVoltage() * INCHES_PER_VOLT);
     }
 
-    public double getDistanceIn(double limit) {
+    // public double getDistanceIn(double limit) {
 
-        double in = analog.getVoltage() * INCHES_PER_VOLT;
+    // double in = Math.round(analog.getVoltage() * INCHES_PER_VOLT);
 
-        if (in > limit)
-            return limit;
-        else
-            return in;
+    // if (in > limit)
+    // return limit;
+    // else
+    // return in;
 
-    }
+    // }
 
     public double getDistanceCM() {
         return analog.getVoltage() * CM_PER_VOLT;
