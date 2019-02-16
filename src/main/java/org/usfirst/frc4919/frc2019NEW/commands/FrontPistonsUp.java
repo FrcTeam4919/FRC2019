@@ -43,6 +43,7 @@ public class FrontPistonsUp extends Command {
     @Override
     protected void initialize() {
         Robot.pneumatics.retractF();
+        System.out.println("Retracting Pistons");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -59,6 +60,7 @@ public class FrontPistonsUp extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        System.out.println("Pistons retracted");
     }
 
     // Called when another command which requires one or more of the same

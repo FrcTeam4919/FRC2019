@@ -42,6 +42,7 @@ public class BackPistonsUp extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        System.out.println("Retracting Pistons");
         Robot.pneumatics.retractB();
     }
 
@@ -59,6 +60,7 @@ public class BackPistonsUp extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        System.out.println("Pistons retracted");
     }
 
     // Called when another command which requires one or more of the same

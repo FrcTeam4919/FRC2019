@@ -10,7 +10,6 @@
 //TODO  ultrasonic import if needed
 
 package org.usfirst.frc4919.frc2019NEW;
-
 import org.usfirst.frc4919.frc2019NEW.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
@@ -100,11 +99,11 @@ public class OI {
         // gearShifterLowSpeedButton = new JoystickButton(joystick, 11);
         // gearShifterLowSpeedButton.whileHeld(new GearShifterLowSpeed());
         // liveWindow = LiveWindow::GetInstance();
-        ultrasonic = new Ultrasonic(0);
+        ultrasonic = Ultrasonic.getUltrasonic();
         LiveWindow.addSensor("sensors", "ultrasonic", ultrasonic);
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+        SmartDashboard.putData("Autonomous Command", new StartGame());
         SmartDashboard.putData("Front Pistons Down", new FrontPistonsDown());
         SmartDashboard.putData("Front Pistons Up", new FrontPistonsUp());
         SmartDashboard.putData("Back Pistons Down", new BackPistonsDown());
