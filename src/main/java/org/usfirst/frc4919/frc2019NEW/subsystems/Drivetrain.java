@@ -80,15 +80,22 @@ public class Drivetrain extends Subsystem {
         double y = joystick2.getY();
         double x = joystick2.getX();
         double z = joystick2.getZ();
-        // y = correctErrors (y);
-        // x = correctErrors (x);
-        // z = correctErrors (z);
+        y = correctErrors(y);
+        x = correctErrors(x);
+        z = correctErrors(z);
 
         westCoastTankDrive.arcadeDrive(x, y);
     }
 
-    public void moveForward() {
+    public double correctErrors(double value) {
+        if (Math.abs(value) < 0.2) {
+            value = 0;
+        }
+        return value;
+    }
 
+    public void moveForward() {
+        westCoastTankDrive.arcadeDrive(0.5, 0);
     }
 
     public void moveBackward() {

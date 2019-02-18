@@ -50,7 +50,7 @@ public class AutonomousCommand extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        ultrasonic = Ultrasonic.getUltrasonic(); 
+        ultrasonic = Ultrasonic.getUltrasonic();
         running = false;
     }
 
@@ -63,9 +63,10 @@ public class AutonomousCommand extends Command {
         }
 
     }
+
     protected void climbDown() {
-        new AutonomousLoop().start();
-        
+        new SensorDrive().start();
+
         // extend back
         System.out.println("Extending back pistons");
         new TimedBackPiston(3).start();

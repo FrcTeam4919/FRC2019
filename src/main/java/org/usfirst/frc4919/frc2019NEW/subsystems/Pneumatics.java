@@ -44,7 +44,7 @@ public class Pneumatics extends Subsystem {
         keyPiston = new DoubleSolenoid(0, 4, 5);
         addChild("Key Piston", keyPiston);
 
-        gearShifter = new DoubleSolenoid(1, 2, 3);
+        gearShifter = new DoubleSolenoid(1, 0, 1);
         addChild("Gear Shifter", gearShifter);
 
         compressor = new Compressor(0);
@@ -107,10 +107,10 @@ public class Pneumatics extends Subsystem {
     }
 
     public void extendG() {
-        keyPiston.set(DoubleSolenoid.Value.kForward);
+        gearShifter.set(DoubleSolenoid.Value.kForward);
     }
 
     public void retractG() {
-        keyPiston.set(DoubleSolenoid.Value.kReverse);
+        gearShifter.set(DoubleSolenoid.Value.kReverse);
     }
 }

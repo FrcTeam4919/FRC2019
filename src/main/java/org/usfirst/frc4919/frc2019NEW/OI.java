@@ -10,6 +10,7 @@
 //TODO  ultrasonic import if needed
 
 package org.usfirst.frc4919.frc2019NEW;
+
 import org.usfirst.frc4919.frc2019NEW.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
@@ -61,6 +62,8 @@ public class OI {
     public JoystickButton gearShifterLowSpeedButton;
     public JoystickButton gearShifterHighSpeedButton;
     public JoystickButton gearSpeed;
+    public JoystickButton AutoPlatform;
+    public JoystickButton AutoPlatformCancel;
     public Joystick joystick;
     public Joystick joystick2;
     public static Ultrasonic ultrasonic;
@@ -91,14 +94,17 @@ public class OI {
         towerPistonBackwardsButton.whileHeld(new TowerPistonBackwards());
         towerPistonForwardsButton = new JoystickButton(joystick2, 3);
         towerPistonForwardsButton.whileHeld(new TowerPistonForwards());
-        gearSpeed = new JoystickButton(joystick2, 1);
-        gearSpeed.whileHeld(new GearSpeed());
+        // gearSpeed = new JoystickButton(joystick2, 1);
+        // gearSpeed.whileHeld(new GearSpeed());
+        gearShifterHighSpeedButton = new JoystickButton(joystick2, 1);
+        gearShifterHighSpeedButton.whenPressed(new GearShifterHighSpeed());
+        gearShifterLowSpeedButton = new JoystickButton(joystick2, 2);
+        gearShifterLowSpeedButton.whenPressed(new GearShifterLowSpeed());
+        AutoPlatform = new JoystickButton(joystick2, 10);
+        AutoPlatform.whenPressed(new AutoPlatform());
+        AutoPlatformCancel = new JoystickButton(joystick2, 12);
+        AutoPlatformCancel.whenPressed(new AutoPlatformCancel());
 
-        // gearShifterHighSpeedButton = new JoystickButton(joystick, 10);
-        // gearShifterHighSpeedButton.whileHeld(new GearShifterHighSpeed());
-        // gearShifterLowSpeedButton = new JoystickButton(joystick, 11);
-        // gearShifterLowSpeedButton.whileHeld(new GearShifterLowSpeed());
-        // liveWindow = LiveWindow::GetInstance();
         ultrasonic = Ultrasonic.getUltrasonic();
         LiveWindow.addSensor("sensors", "ultrasonic", ultrasonic);
 

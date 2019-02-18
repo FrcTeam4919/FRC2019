@@ -9,21 +9,21 @@ package org.usfirst.frc4919.frc2019NEW.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class StartGame extends CommandGroup {
+public class AutoPlatform extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public StartGame() {
+  public AutoPlatform() {
     // Add Commands here:
-    addSequential(new SensorDrive());
-    addSequential(new TimedBackPiston(3));
-    addSequential(new TimedDrive(2));
-    addSequential(new TimedFrontPistons(3));
-    addSequential(new TimedDrive(1));
-    addSequential(new BackAndFrontPistons());
-    addSequential(new TimedDrive(5));
 
-    // e.g. addSequential(new Command1());
+    addSequential(new TimedFrontPistons(3));
+    addSequential(new TimedDriveForwards(4));
+    addSequential(new TimedBackPiston(3));
+    addSequential(new TimedFrontPistonsUp(3));
+    addSequential(new TimedDriveForwards(4));
+    addSequential(new TimedBackPistonsUp(3));
+    addSequential(new TimedDriveForwards(4));
+    // e.g. addSequential(new Command1);
     // addSequential(new Command2());
     // these will run in order.
 

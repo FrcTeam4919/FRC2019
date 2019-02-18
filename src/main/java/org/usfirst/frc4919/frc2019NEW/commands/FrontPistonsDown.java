@@ -59,6 +59,7 @@ public class FrontPistonsDown extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        System.out.println("Front Pistons Extended");
     }
 
     // Called when another command which requires one or more of the same
@@ -67,7 +68,6 @@ public class FrontPistonsDown extends Command {
     protected void interrupted() {
     }
 
-    
     public void extend() {
         doubleSolenoid.set(DoubleSolenoid.Value.kForward);
     }

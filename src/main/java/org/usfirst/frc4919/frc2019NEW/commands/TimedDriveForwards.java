@@ -8,32 +8,44 @@
 package org.usfirst.frc4919.frc2019NEW.commands;
 
 import org.usfirst.frc4919.frc2019NEW.Robot;
-import org.usfirst.frc4919.frc2019NEW.subsystems.Ultrasonic;
 
-import edu.wpi.first.wpilibj.command.InstantCommand;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 
 /**
  * Add your docs here.
  */
-public class SensorDrive extends InstantCommand {
+public class TimedDriveForwards extends TimedCommand {
   /**
    * Add your docs here.
    */
-  public SensorDrive() {
-    super();
+  public TimedDriveForwards(double timeout) {
+    super(timeout);
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.ultrasonic);
     requires(Robot.drivetrain);
     // eg. requires(chassis);
   }
 
-  // Called once when the command executes
+  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    while (Robot.ultrasonic.getDistanceIn() < 50) {
-      // drive backwards
-      Robot.drivetrain.moveBackward();
-    }
+    // System.out.println("Moving Forwards");
   }
 
+  // Called repeatedly when this Command is scheduled to run
+  @Override
+  protected void execute() {
+    Robot.drivetrain.moveForward();
+    System.out.println("Moving Forwards");
+  }
+
+  // Called once after timeout
+  @Override
+  protected void end() {
+  }
+
+  // Called when another command which requires one or more of the same
+  // subsystems is scheduled to run
+  @Override
+  protected void interrupted() {
+  }
 }
