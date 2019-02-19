@@ -43,7 +43,7 @@ public class BackPistonsUp extends Command {
     @Override
     protected void initialize() {
         System.out.println("Retracting Pistons");
-        Robot.pneumatics.retractB();
+        Robot.pneumatics.extendB();
     }
 
     // Called repeatedly when this Command is scheduled to run

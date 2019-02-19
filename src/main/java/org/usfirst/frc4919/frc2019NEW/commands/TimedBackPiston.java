@@ -34,7 +34,7 @@ public class TimedBackPiston extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    new BackPistonsDown().extend();
+    new BackPistonsDown().retract();
   }
 
   // Called once after timeout

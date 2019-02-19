@@ -84,7 +84,7 @@ public class Drivetrain extends Subsystem {
         x = correctErrors(x);
         z = correctErrors(z);
 
-        westCoastTankDrive.arcadeDrive(x, y);
+        westCoastTankDrive.arcadeDrive(x, -y);
     }
 
     public double correctErrors(double value) {
