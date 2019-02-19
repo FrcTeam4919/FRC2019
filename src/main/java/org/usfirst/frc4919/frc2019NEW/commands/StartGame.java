@@ -15,6 +15,7 @@ public class StartGame extends CommandGroup {
    */
   public StartGame() {
     // Add Commands here:
+    addSequential(new TimedGearShifter(3));
     addSequential(new SensorDrive());
     addSequential(new TimedBackPiston(3));
     addSequential(new TimedDrive(2));

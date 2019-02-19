@@ -15,7 +15,7 @@ public class AutoPlatform extends CommandGroup {
    */
   public AutoPlatform() {
     // Add Commands here:
-
+    addSequential(new TimedGearShifter(3));
     addSequential(new TimedFrontPistons(3));
     addSequential(new TimedDriveForwards(4));
     addSequential(new TimedBackPiston(3));
